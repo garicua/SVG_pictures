@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>svg</title>
+</head>
+<body>
+<svg width="500" height="500">
+	<path d="M10, 110 A120,120 -45 0,1 110 10, A120, 120 -45 0,1 10,110" fill="none" id="test-path"></path>
+	<rect height="100" width="100" fill="red">
+	<animate id="step1" attributeName="height" from="100" to="120" dur=".3s" begin="0s; step6.end" repeatCount="1"></animate>
+	<animate id="step2" attributeName="height" from="120" to="100" dur=".3s" begin="step1.end" repeatCount="1"></animate>
+
+	<animate id="step3" attributeName="width" from="100" to="120" dur=".3s" begin="step2.end" repeatCount="1"></animate>
+
+	<animate id="step4" attributeName="height" from="120" to="100" dur=".3s" begin="step3.end" repeatCount="1"></animate>
+	<animate id="step5" attributeName="rx" from="0" to="50" dur=".3s" begin="step4.end" repeatCount="1"></animate>
+	<animate id="step6" attributeName="rx" from="50" to="0" dur=".3s" begin="step5.end" repeatCount="1"></animate>
+	<animateMotion dur="8s" repeatCount="indefinite">
+		<mpath xlink:href="#test-path"></mpath>
+	</animateMotion>
+	</rect>
+</svg>
+</body>
+</html>
